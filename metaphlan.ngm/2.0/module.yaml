@@ -1,0 +1,61 @@
+version: 2.0.0
+name: metaphlan
+functions:
+    -
+        nglName: metaphlan
+        arg0: ./run.sh
+
+        arg1: 
+            atype: readset
+        additional:
+            -
+                name: ignore_viruses
+                atype: flag
+                when-true: '--ignore_viruses'
+            -
+                name: ignore_eukaryotes
+                atype: flag
+                when-true: '--ignore_eukaryotes'
+            -
+                name: ignore_archaea
+                atype: flag
+                when-true: '--ignore_archaea'
+            -
+                name: ignore_bacteria
+                atype: flag
+                when-true: '--ignore_bacteria'
+            -
+                name: taxonomic_level
+                atype: option
+                def: a
+                allowed:
+                    - a
+                    - k
+                    - p
+                    - c
+                    - o
+                    - f
+                    - g
+                    - s
+            -
+                name: analysis_type
+                atype: option
+                def: rel_ab
+                allowed:
+                    - rel_ab
+                    - rel_ab_w
+                    - reads_map
+                    - clade_profiles
+                    - marker_ab_table
+                    - marker_counts
+                    - marker_pres_table
+        return:
+            rtype: counts
+            name: ofile
+            extension: tsv
+init:
+    init_cmd: ./run.sh
+
+citation: >
+    MetaPhlAn2 for enhanced metagenomic taxonomic profiling by
+    Truong, D. T. et al. Nature Methods 12, 902–3 (2015).
