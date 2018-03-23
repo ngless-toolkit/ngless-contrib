@@ -116,12 +116,6 @@ if [[ ! -z "$1" ]] ; then
         fi
     fi
 
-    # Load metaphlan2 Bork setup
-    if [ -f /etc/profile.d/modules.sh ] ; then
-        source /etc/profile.d/modules.sh
-    fi
-    module add metaphlan2/2.7.0-2cd058a685f2
-
     set -euo pipefail
 
     cat ${READS} | metaphlan2.py \
