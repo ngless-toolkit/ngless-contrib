@@ -7,6 +7,7 @@ functions:
 
         arg1: 
             atype: readset
+            can_gzip: true
         additional:
             -
                 name: ignore_viruses

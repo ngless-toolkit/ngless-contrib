@@ -15,8 +15,8 @@ if ! which sed >/dev/null ; then
     exit 1
 fi
 
-if ! which cat >/dev/null ; then
-    echo "cat command not found"
+if ! which zcat >/dev/null ; then
+    echo "zcat command not found"
     exit 1
 fi
 
@@ -118,7 +118,7 @@ if [[ ! -z "$1" ]] ; then
 
     set -euo pipefail
 
-    cat ${READS} | metaphlan2.py \
+    zcat ${READS} | metaphlan2.py \
         --input_type fastq \
         -t "${ANALYTYPE}" \
         ${IGNORES} \
