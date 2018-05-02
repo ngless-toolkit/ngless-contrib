@@ -41,6 +41,7 @@ init:
     init_cmd: ./run.sh
 
 citation: >
+    At the time of writing mOTUs-v2 isn't published yet. Meanwhile please cite
     Metagenomic species profiling using universal phylogenetic marker genes by
     Shinichi Sunagawa, Daniel R Mende, Georg Zeller, Fernando
     Izquierdo-Carrasco, Simon A Berger, Jens Roat Kultima, Luis Pedro Coelho,
