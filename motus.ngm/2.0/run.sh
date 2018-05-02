@@ -33,7 +33,7 @@ fi
 
 if [ ! -d "$NGLESS_MODULE_DIR/mOTUs_v2" ]; then
     echo "mOTUs_v2 profiler not found. Please run:"
-    echo "  cd $(pwd)/$NGLESS_MODULE_DIR && git clone --depth 1 git@git.embl.de:mende/mOTUs_v2.git"
+    echo "  cd $(pwd)/$NGLESS_MODULE_DIR && git clone --depth 1 https://github.com/motu-tool/mOTUs_v2.git"
     exit 1
 fi
 
