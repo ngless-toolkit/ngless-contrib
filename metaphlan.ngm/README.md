@@ -6,7 +6,7 @@ metaphlan version 2 (aka metaphlan2)
 
 ## Citation
 
-Truong et al. - MetaPhlAn2 for enhanced metagenomic taxonomic profiling
+Truong et al. - MetaPhlAn2 for enhanced metagenomic taxonomic profiling  
 Nature Methods 12, 902–903 (2015)
 
 # Usage

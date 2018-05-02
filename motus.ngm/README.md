@@ -8,7 +8,7 @@ mOTUs version 2.0
 
 At the time of writing mOTU v2 lacks a publication, meanwhile please cite:
 
-Sunagawa et al. - Metagenomic species profiling using universal phylogenetic marker genes by
+Sunagawa et al. - Metagenomic species profiling using universal phylogenetic marker genes  
 Nature Methods 10, 1196-1199 (2013)
 
 # Usage
