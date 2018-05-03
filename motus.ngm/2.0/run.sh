@@ -30,14 +30,14 @@ if ! python -c 'import sys; not ((sys.version_info.major == 2 and sys.version_in
     exit 1
 fi
 
-
-if [ ! -d "$NGLESS_MODULE_DIR/mOTUs_v2" ]; then
-    echo "mOTUs_v2 profiler not found. Please run:"
-    echo "  cd $(pwd)/$NGLESS_MODULE_DIR && git clone --depth 1 https://github.com/motu-tool/mOTUs_v2.git"
-    exit 1
-fi
-
-if [[ ! -z "$1" ]] ; then
+if [[ -z "$1" ]] ; then
+    if [ ! -d "$NGLESS_MODULE_DIR/mOTUs_v2" ]; then
+        echo "mOTUs_v2 profiler not found. Please run the following command to install:"
+        echo "  cd $(pwd)/$NGLESS_MODULE_DIR && git clone --branch 0.6 --depth 1 https://github.com/motu-tool/mOTUs_v2.git && cd mOTUs_v2 && python setup.py"
+        echo "You can download a different version by passing a different value to --branch"
+        exit 1
+    fi
+else
     # Parsing arguments passed
     ARG_PARSE="getopt -o s:Io:t:a -l sample:,speci_only,ofile:,taxonomic_level:,rel_abund -n $0 --"
 
