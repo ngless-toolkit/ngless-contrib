@@ -15,7 +15,7 @@ Nature Methods 10, 1196-1199 (2013)
 
 Functions provided:
 
-* `metaphlan`
+* `motus`
 
 Arguments for `motus`:
 
