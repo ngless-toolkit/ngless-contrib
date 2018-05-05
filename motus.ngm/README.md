@@ -32,7 +32,7 @@ Returns `counts` compatible with `collect()`.
 
 ```
 ngless "0.6"
-import "motus" version "2.0"
+local import "motus" version "2.0"
 import "parallel" version "0.6"
 import "mocat" version "0.0"
 
