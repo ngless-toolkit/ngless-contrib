@@ -1,0 +1,76 @@
+version: 0.9.1
+name: salmon 
+functions:
+    -
+        nglName: salmon_reads
+        arg0: ./run_reads.sh
+
+        arg1: 
+            atype: readset
+            can_gzip: true
+        additional:
+            -
+                # File to be indexed
+                name: transcripts 
+                required: true
+                atype: str
+            -
+                name: kmer
+                atype: int
+                def: 31
+            -
+                name: libtype
+                atype: str
+                def: A
+            -
+                name: discard_orphans
+                atype: flag
+                when-true: '--discard_orphans'
+            -
+                name: sequence_bias_correction
+                atype: flag
+                when-true: '--seq_bias'
+            -
+                name: metagenomics
+                atype: flag
+                when-true: '--meta'
+        return:
+            rtype: counts
+            name: ofile
+            extension: tsv
+    -
+        nglName: salmon_alignment
+        arg0: ./run_align.sh
+
+        arg1: 
+            atype: mappedreadset
+            filetype: 'bam'
+
+        additional:
+            -
+                name: transcripts 
+                required: true
+                atype: str
+            -
+                name: libtype
+                atype: str
+                def: A
+            -
+                name: sequence_bias_correction
+                atype: flag
+                when-true: '--seqBias'
+            -
+                name: metagenomics
+                atype: flag
+                when-true: '--meta'
+        return:
+            rtype: counts
+            name: ofile
+            extension: tsv
+init:
+    init_cmd: ./check_install.sh
+
+citation: >
+    Patro, R., Duggal, G., Love, M. I., Irizarry, R. A., & Kingsford, C.
+    Salmon provides fast and bias-aware quantification of transcript expression.
+    Nature Methods (2017), doi:10.1038/nmeth.4197
