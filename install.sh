@@ -2,7 +2,7 @@
 
 # Chdir to the current's script location
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
+cd "$DIR" || exit 1
 
 INSTALLDIR="$HOME/.local/share/ngless/data/Modules"
 
