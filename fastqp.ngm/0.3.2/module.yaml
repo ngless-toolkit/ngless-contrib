@@ -1,0 +1,74 @@
+version: 0.3.2
+name: fastqp 
+functions:
+    -
+        nglName: plot_qc_reads
+        arg0: ./run.sh
+
+        arg1: 
+            atype: readset
+            can_gzip: true
+            filetype: 'fq3'
+        additional:
+            -
+                name: oprefix
+                required: true
+                atype: str
+            -
+                name: name
+                atype: str
+            -
+                name: sample_size
+                atype: int
+                def: 2000000
+            -
+                name: aligned_only
+                atype: flag
+                when-true: '--aligned_only'
+            -
+                name: unaligned_only
+                atype: flag
+                when-true: '--unaligned_only'
+            -
+                name: count_duplicates 
+                atype: flag
+                when-true: '--count_duplicates'
+                
+    -
+        nglName: plot_qc_mapped
+        arg0: ./run.sh
+
+        arg1: 
+            atype: mappedreadset
+            filetype: 'sam_or_bam'
+
+        additional:
+            -
+                name: oprefix
+                required: true
+                atype: str
+            -
+                name: name
+                atype: str
+            -
+                name: sample_size
+                atype: int
+                def: 2000000
+            -
+                name: aligned_only
+                atype: flag
+                when-true: '--aligned-only'
+            -
+                name: unaligned_only
+                atype: flag
+                when-true: '--unaligned_only'
+            -
+                name: count_duplicates 
+                atype: flag
+                when-true: '--count-duplicates'
+init:
+    init_cmd: ./check_install.sh
+
+citation: >
+    Fastqp is developed by Matthew Shirley and can be found at
+    https://github.com/mdshw5/fastqp
