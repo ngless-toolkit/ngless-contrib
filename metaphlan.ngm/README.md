@@ -4,6 +4,8 @@ This external module integrates:
 
 metaphlan version 2 (aka metaphlan2)
 
+Currently this module assumes that metaphlan2.py is installed and available in $PATH.
+
 ## Citation
 
 Truong et al. - MetaPhlAn2 for enhanced metagenomic taxonomic profiling  

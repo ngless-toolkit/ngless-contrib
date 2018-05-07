@@ -1,37 +1,42 @@
 #!/usr/bin/env bash
 
-if ! which python >/dev/null ; then
+if ! command -v python >/dev/null ; then
     echo "python command not found"
     exit 1
 fi
 
-if ! which getopt >/dev/null ; then
+if ! command -v getopt >/dev/null ; then
     echo "getopt command not found"
     exit 1
 fi
 
-if ! which sed >/dev/null ; then
+if ! command -v sed >/dev/null ; then
     echo "sed command not found"
     exit 1
 fi
 
-if ! which zcat >/dev/null ; then
+if ! command -v zcat >/dev/null ; then
     echo "zcat command not found"
     exit 1
 fi
 
-if ! which cut >/dev/null ; then
+if ! command -v cut >/dev/null ; then
     echo "cut command not found"
     exit 1
 fi
 
-if ! which sort >/dev/null ; then
+if ! command -v sort >/dev/null ; then
     echo "sort command not found"
     exit 1
 fi
 
 if ! python -c 'import sys; not ((sys.version_info.major == 2 and sys.version_info.minor >= 7) or sys.version_info.major == 3) and sys.exit(1)' >/dev/null ; then
     echo "Incompatible python version: need 2.7 or 3.x"
+    exit 1
+fi
+
+if ! command -v metaphlan2.py >/dev/null ; then
+    echo "metaphlan2.py command not found"
     exit 1
 fi
 
