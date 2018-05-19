@@ -14,6 +14,16 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+run_indexing() {
+    echo "Indexing or waiting on database"
+    flock "${INDEXLCK}" "$SALMON" index \
+        --transcripts "${DB}" \
+        --threads "$NGLESS_NR_CORES" \
+        --kmerLen "${KMER}" \
+        --index "${INDEXTMP}" && \
+    mv "${INDEXTMP}" "${INDEX}"
+}
+
 # Abort on any errors from this point onwards
 set -e
 
@@ -97,18 +107,23 @@ TMPOUTPUT="${TMPDIR}/result"
 
 # Index file first and use a lock to prevent parallel indexing
 INDEX="${DB}.index"
+INDEXTMP="${DB}.index.tmp"
 INDEXLCK="${DB}.index.lock"
 
-if [ ! -d "${INDEX}" ]; then
-    echo "Indexing transcript database"
-    flock "${INDEXLCK}" "$SALMON" index \
-        --transcripts "${DB}" \
-        --threads "$NGLESS_NR_CORES" \
-        --kmerLen "${KMER}" \
-        --index "${INDEX}"
-else
-    echo "Waiting that indexing locks are released"
-    flock "${INDEXLCK}" echo
+if [ ! -d "${INDEX}" ] && [ ! -d "${INDEXTMP}" ]; then
+    run_indexing
+elif [ ! -d "${INDEX}" ] && [ -d "${INDEXTMP}" ]; then
+    # Some indexing has started but isn't complete yet
+    # If lock is older than 1 day something went wrong
+    if test "$(find "${INDEXLCK}" -type f -mtime +1)"; then
+        echo "Indexing lock is older than 1 day ... treating as stale"
+        rm -f "${INDEXLCK}"
+        rm -f "${INDEXTMP}"
+        run_indexing
+    else
+        echo "Waiting up to 1 day for index locks to be released"
+        flock "${INDEXLCK}" -w 86400 echo
+    fi
 fi
 
 echo "Quantifying..."
