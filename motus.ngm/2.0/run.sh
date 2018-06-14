@@ -25,16 +25,15 @@ if ! which cut >/dev/null ; then
     exit 1
 fi
 
-if ! python -c 'import sys; not ((sys.version_info.major == 2 and sys.version_info.minor >= 7) or sys.version_info.major == 3) and sys.exit(1)' >/dev/null ; then
-    echo "Incompatible python version: need 2.7 or 3.x"
+if ! python -c 'import sys; not (sys.version_info.major == 3) and sys.exit(1)' >/dev/null ; then
+    echo "Incompatible python version: need 3.x"
     exit 1
 fi
 
 if [[ -z "$1" ]] ; then
     if [ ! -d "$NGLESS_MODULE_DIR/mOTUs_v2" ]; then
         echo "mOTUs_v2 profiler not found. Please run the following command to install:"
-        echo "  cd $(pwd)/$NGLESS_MODULE_DIR && git clone --branch 0.6 --depth 1 https://github.com/motu-tool/mOTUs_v2.git && cd mOTUs_v2 && python setup.py"
-        echo "You can download a different version by passing a different value to --branch"
+        echo "  cd $(pwd)/$NGLESS_MODULE_DIR && wget https://github.com/motu-tool/mOTUs_v2/archive/2.0.0.tar.gz && tar xf 2.0.0.tar.gz && rm -f 2.0.0.tar.gz && mv mOTUs_v2-2.0.0 mOTUs_v2 && cd mOTUs_v2 && python setup.py"
         exit 1
     fi
 else
@@ -63,7 +62,10 @@ else
     SAMPLE=""
     SPECI=""
     OUTPUT=""
-    RELABUND=""
+    # motus 2.0.0 changed the default to relative abundance. It was counts before.
+    # With this change and in order to not break API from our side, we default
+    # to -c (counts) and unset RELABUND if user asked for --rel_abund
+    RELABUND="-c"
     TAXLEVEL=""
 
     while true; do
@@ -81,7 +83,7 @@ else
                 ;;
             -a|--rel_abund)
                 shift
-                RELABUND="-w"
+                RELABUND=""
                 ;;
             -o|--ofile)
                 shift
