@@ -1,0 +1,21 @@
+version: 0.1.0
+name: fastx
+functions:
+    -
+        nglName: fastx_quality_stats
+        arg0: ./run.sh
+
+        arg1: 
+            atype: readset
+            can_gzip: false
+        additional:
+            -
+                name: oprefix
+                required: true
+                atype: str
+init:
+    init_cmd: ./check_install.sh
+
+citation: >
+    Fastx is developed by Assaf Gordon and can be found at
+    http://hannonlab.cshl.edu/fastx_toolkit/
