@@ -1,4 +1,4 @@
-version: 2.0.0
+version: 2.1.0
 name: motus
 functions:
     -
@@ -41,12 +41,11 @@ init:
     init_cmd: ./run.sh
 
 citation: >
-    At the time of writing mOTUs-v2 isn't published yet. Meanwhile please cite
-    Metagenomic species profiling using universal phylogenetic marker genes by
-    Shinichi Sunagawa, Daniel R Mende, Georg Zeller, Fernando
-    Izquierdo-Carrasco, Simon A Berger, Jens Roat Kultima, Luis Pedro Coelho,
-    Manimozhiyan Arumugam, Julien Tap, Henrik Bjørn Nielsen, Simon Rasmussen,
-    Søren Brunak, Oluf Pedersen, Francisco Guarner, Willem M de Vos, Jun Wang,
-    Junhua Li, Joël Doré, S Dusko Ehrlich, Alexandros Stamatakis, and Peer Bork
-    Nature Methods 10, 1196-1199 (2013) doi:10.1038/nmeth.2693
+    Alessio Milanese, Daniel R Mende, Lucas Paoli, Guillem Salazar,
+    Hans-Joachim Ruscheweyh, Miguelangel Cuenca, Pascal Hingamp, Renato Alves,
+    Paul I Costea, Luis Pedro Coelho, Thomas S B Schmidt, Alexandre Almeida,
+    Alex L Mitchell, Robert D Finn, Jaime Huerta-Cepas, Peer Bork, Georg Zeller
+    & Shinichi Sunagawa. Microbial abundance, activity and population genomic
+    profiling with mOTUs2; Nature Communications 10, Article number: 1014
+    (2019). doi: 10.1038/s41467-019-08844-4
 

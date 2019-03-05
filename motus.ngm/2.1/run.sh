@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+MOTUS2_VERSION="2.1.1"
+MOTUS2_DOWNLOAD="https://github.com/motu-tool/mOTUs_v2/archive/${MOTUS2_VERSION}.tar.gz"
+
 if ! which python >/dev/null ; then
     echo "python command not found"
     exit 1
@@ -33,7 +36,7 @@ fi
 if [[ -z "$1" ]] ; then
     if [ ! -d "$NGLESS_MODULE_DIR/mOTUs_v2" ]; then
         echo "mOTUs_v2 profiler not found. Please run the following command to install:"
-        echo "  cd $NGLESS_MODULE_DIR && wget https://github.com/motu-tool/mOTUs_v2/archive/2.0.0.tar.gz && tar xf 2.0.0.tar.gz && rm -f 2.0.0.tar.gz && mv mOTUs_v2-2.0.0 mOTUs_v2 && cd mOTUs_v2 && python setup.py"
+        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS2_DOWNLOAD && tar xf ${MOTUS2_VERSION}.tar.gz && rm -f ${MOTUS2_VERSION}.tar.gz && mv mOTUs_v2-${MOTUS2_VERSION} mOTUs_v2 && cd mOTUs_v2 && python setup.py"
         exit 1
     fi
 else

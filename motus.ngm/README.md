@@ -2,14 +2,18 @@
 
 This external module integrates: 
 
-mOTUs version 2.0
+mOTUs version 2.1
 
 ## Citation
 
-At the time of writing mOTU v2 lacks a publication, meanwhile please cite:
+    Alessio Milanese, Daniel R Mende, Lucas Paoli, Guillem Salazar,
+    Hans-Joachim Ruscheweyh, Miguelangel Cuenca, Pascal Hingamp, Renato Alves,
+    Paul I Costea, Luis Pedro Coelho, Thomas S B Schmidt, Alexandre Almeida,
+    Alex L Mitchell, Robert D Finn, Jaime Huerta-Cepas, Peer Bork, Georg Zeller
+    & Shinichi Sunagawa. Microbial abundance, activity and population genomic
+    profiling with mOTUs2; Nature Communications 10, Article number: 1014
+    (2019). doi: 10.1038/s41467-019-08844-4
 
-Sunagawa et al. - Metagenomic species profiling using universal phylogenetic marker genes  
-Nature Methods 10, 1196-1199 (2013)
 
 # Usage
 
@@ -32,7 +36,7 @@ Returns `counts` compatible with `collect()`.
 
 ```
 ngless "0.6"
-local import "motus" version "2.0"
+local import "motus" version "2.1"
 import "parallel" version "0.6"
 import "mocat" version "0.0"
 
