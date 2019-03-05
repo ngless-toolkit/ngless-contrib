@@ -136,11 +136,14 @@ else
         -t "$NGLESS_NR_CORES" \
         -k "${TAXLEVEL}" \
         -n "${SAMPLE}" \
-        -o "${OUTPUT}" \
+        -o "${TMPBINDIR}/output.txt" \
         ${READS}
 
-    # Remove comments from profile to conform with ngless' expectation
-    sed -i.tmp '/^\#/d' "${OUTPUT}"
+    # Convert to conform to NGLess' expectations:
+    #  1. Add header
+    #  2. Remove comments
+    #  3. sort (must be done in C locale!)
+    (printf "\t${SAMPLE}\n" ;  sed '/^\#/d'  < "${TMPBINDIR}/output.txt" | LC_ALL=C sort)> "${OUTPUT}"
 
     rm -rf "${TMPDIR}"
 fi
