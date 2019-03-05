@@ -44,14 +44,14 @@ echo >&2 "Arguments are: $*"
 
 # forward, reverse and single reads
 if [[ "1" -eq "$#" ]] ; then
-    fastx_quality_stats -i "$1" -o "${OUTPUT}.fxstats"
+    fastx_quality_stats -i <(zcat "$1") -o "${OUTPUT}.fxstats"
 elif [[ "2" -eq "$#" ]]; then
-    fastx_quality_stats -i "$1" -o "${OUTPUT}.pair.1.fxstats"
-    fastx_quality_stats -i "$2" -o "${OUTPUT}.pair.2.fxstats"
+    fastx_quality_stats -i <(zcat "$1") -o "${OUTPUT}.pair.1.fxstats"
+    fastx_quality_stats -i <(zcat "$2") -o "${OUTPUT}.pair.2.fxstats"
 elif [[ "3" -eq "$#" ]]; then
-    fastx_quality_stats -i "$1" -o "${OUTPUT}.pair.1.fxstats"
-    fastx_quality_stats -i "$2" -o "${OUTPUT}.pair.2.fxstats"
-    fastx_quality_stats -i "$3" -o "${OUTPUT}.single.fxstats"
+    fastx_quality_stats -i <(zcat "$1") -o "${OUTPUT}.pair.1.fxstats"
+    fastx_quality_stats -i <(zcat "$2") -o "${OUTPUT}.pair.2.fxstats"
+    fastx_quality_stats -i <(zcat "$3") -o "${OUTPUT}.single.fxstats"
 else
     echo >&2 "ERROR: Invalid number of files (arguments) passed."
     echo >&2 "  Expected: 1 (single), 2 (pair.1 + pair.2) or 3 (pairs + single)"

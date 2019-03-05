@@ -7,7 +7,8 @@ functions:
 
         arg1: 
             atype: readset
-            can_gzip: false
+            can_gzip: true
+            can_bzip2: false
         additional:
             -
                 name: oprefix

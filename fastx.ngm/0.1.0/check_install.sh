@@ -5,6 +5,11 @@ if ! which getopt >/dev/null ; then
     exit 1
 fi
 
+if ! which zcat >/dev/null ; then
+    echo "zcat command not found"
+    exit 1
+fi
+
 if ! which fastx_quality_stats >/dev/null ; then
     echo "fastx_quality_stats command not found"
     exit 1
