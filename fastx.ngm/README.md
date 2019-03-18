@@ -2,7 +2,7 @@
 
 This external module integrates: 
 
-fastx version 0.0.13 as fastx module 0.1.0.
+fastx version 0.0.14 as fastx module 0.1.0.
 
 ## Citation
 
