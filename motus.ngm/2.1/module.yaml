@@ -5,7 +5,7 @@ functions:
         nglName: motus
         arg0: ./run.sh
 
-        arg1: 
+        arg1:
             atype: readset
             can_gzip: true
         additional:
@@ -33,6 +33,14 @@ functions:
                     - family
                     - genus
                     - mOTU
+            -
+                name: no_marker_genes
+                atype: int
+                def: 3
+            -
+                name: length_alignment
+                atype: int
+                def: 75
         return:
             rtype: counts
             name: ofile
@@ -48,4 +56,3 @@ citation: >
     & Shinichi Sunagawa. Microbial abundance, activity and population genomic
     profiling with mOTUs2; Nature Communications 10, Article number: 1014
     (2019). doi: 10.1038/s41467-019-08844-4
-

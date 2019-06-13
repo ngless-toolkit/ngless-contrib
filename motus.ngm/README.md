@@ -1,6 +1,6 @@
 # About
 
-This external module integrates: 
+This external module integrates:
 
 mOTUs version 2.1
 
@@ -29,6 +29,8 @@ Arguments for `motus`:
 | `specI_only` | flag | false | false |   |
 | `relative_abundance` | flag | false | false |   |
 | `taxonomic_level` | option | false | `mOTU` | `kingdom`, `phylum`, `class`, `order`, `family`, `genus`, `mOTU` |
+| `no_marker_genes` | option | false | `3` | `1..10` |
+| `length_alignment` | option | false | `75` |  |
 
 Returns `counts` compatible with `collect()`.
 
