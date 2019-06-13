@@ -41,7 +41,7 @@ if [[ -z "$1" ]] ; then
     fi
 else
     # Parsing arguments passed
-    ARG_PARSE="getopt -o s:Io:t:a -l sample:,speci_only,ofile:,taxonomic_level:,rel_abund -n $0 --"
+    ARG_PARSE="getopt -o s:Io:t:g:y:a -l sample:,speci_only,ofile:,taxonomic_level:,no_marker_genes:,length_alignment:,rel_abund -n $0 --"
 
     # We process arguments twice to handle any argument parsing error:
     ARG_ERROR=$($ARG_PARSE "$@" 2>&1 1>/dev/null)
@@ -70,6 +70,8 @@ else
     # to -c (counts) and unset RELABUND if user asked for --rel_abund
     RELABUND="-c"
     TAXLEVEL=""
+    NOMG="3"
+    LENALGN="75"
 
     while true; do
         case "$1" in
@@ -96,6 +98,16 @@ else
             -t|--taxonomic_level)
                 shift
                 TAXLEVEL="$1"
+                shift
+                ;;
+            -g|--no_marker_genes)
+                shift
+                NOMG="$1"
+                shift
+                ;;
+            -y|--length_alignment)
+                shift
+                LENALGN="$1"
                 shift
                 ;;
             --)
@@ -138,6 +150,8 @@ else
         $RELABUND \
         -t "$NGLESS_NR_CORES" \
         -k "${TAXLEVEL}" \
+        -g "${NOMG}" \
+        -l "${LENALGN}" \
         -n "${SAMPLE}" \
         -o "${TMPBINDIR}/output.txt" \
         ${READS}
