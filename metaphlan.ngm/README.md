@@ -53,6 +53,6 @@ count = metaphlan(files,
 collect(count,
         current=sample,
         allneeded=samples,
-        ofile='outputs/all_samples.metaphlan2.tsv')
+        ofile='all_samples.metaphlan2.tsv')
 
 ```

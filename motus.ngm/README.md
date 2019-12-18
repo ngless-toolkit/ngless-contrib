@@ -58,5 +58,5 @@ count = motus(files,
 collect(count,
         current=sample,
         allneeded=samples,
-        ofile='outputs/all_samples.motusv2.relabund.tsv')
+        ofile='all_samples.motusv2.relabund.tsv')
 ```
