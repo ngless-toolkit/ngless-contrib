@@ -1,0 +1,89 @@
+name: gmgc
+version: 1.0.0
+citation: Coelho, L. P. et al., forthcoming
+references:
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-gut.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-gut'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.mouse-gut.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:mouse-gut'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.dog-gut.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:dog-gut'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.pig-gut.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:pig-gut'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.cat-gut.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:cat-gut'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-vagina.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-vagina'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-oral.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-oral'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-skin.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-skin'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-nose.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-nose'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.soil.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:soil'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.marine.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:marine'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.built-environment.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:built-environment'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.freshwater.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:freshwater'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.wastewater.95nr.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:wastewater'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-gut.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-gut:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.mouse-gut.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:mouse-gut:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.dog-gut.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:dog-gut:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.pig-gut.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:pig-gut:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.cat-gut.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:cat-gut:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-vagina.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-vagina:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-oral.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-oral:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-skin.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-skin:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-nose.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:human-nose:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.soil.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:soil:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.marine.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:marine:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.built-environment.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:built-environment:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.freshwater.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:freshwater:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.wastewater.95nr.no-rare.fna.gz',
+  map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:wastewater:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: gmgc}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.no-rare.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:no-rare'}
+- {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.complete.fna.gz', map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
+  name: 'gmgc:complete'}
