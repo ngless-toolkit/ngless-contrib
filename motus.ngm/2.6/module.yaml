@@ -1,0 +1,58 @@
+version: 2.6.0
+name: motus
+functions:
+    -
+        nglName: motus
+        arg0: ./run.sh
+
+        arg1:
+            atype: readset
+            can_gzip: true
+        additional:
+            -
+                name: sample
+                atype: str
+                required: true
+            -
+                name: specI_only
+                atype: flag
+                when-true: '--speci_only'
+            -
+                name: relative_abundance
+                atype: flag
+                when-true: '--rel_abund'
+            -
+                name: taxonomic_level
+                atype: option
+                def: mOTU
+                allowed:
+                    - kingdom
+                    - phylum
+                    - class
+                    - order
+                    - family
+                    - genus
+                    - mOTU
+            -
+                name: no_marker_genes
+                atype: int
+                def: 3
+            -
+                name: length_alignment
+                atype: int
+                def: 75
+        return:
+            rtype: counts
+            name: ofile
+            extension: tsv
+init:
+    init_cmd: ./run.sh
+
+citation: >
+    Alessio Milanese, Daniel R Mende, Lucas Paoli, Guillem Salazar,
+    Hans-Joachim Ruscheweyh, Miguelangel Cuenca, Pascal Hingamp, Renato Alves,
+    Paul I Costea, Luis Pedro Coelho, Thomas S B Schmidt, Alexandre Almeida,
+    Alex L Mitchell, Robert D Finn, Jaime Huerta-Cepas, Peer Bork, Georg Zeller
+    & Shinichi Sunagawa. Microbial abundance, activity and population genomic
+    profiling with mOTUs2; Nature Communications 10, Article number: 1014
+    (2019). doi: 10.1038/s41467-019-08844-4
