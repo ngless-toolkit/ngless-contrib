@@ -1,6 +1,9 @@
 name: gmgc
 version: 1.0.0
-citation: Coelho, L. P. et al., forthcoming
+citation: >
+    Coelho, L.P., Alves, R., del Río, Á.R. et al. Towards the biogeography of
+    prokaryotic genes. Nature 601, 252–256 (2022).
+    https://doi.org/10.1038/s41586-021-04233-4
 references:
 - {fasta-file: 'http://gmgc.embl.de/downloads/v1.0/GMGC10.human-gut.95nr.fna.gz',
   map-file: 'http://gmgc.embl.de/dumpFile.cgi?i=GMGC10.emapper2.annotations.tsv.gz',
