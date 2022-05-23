@@ -2,7 +2,7 @@
 
 This external module integrates:
 
-mOTUs version 2.5
+mOTUs version 2.6
 
 ## Citation
 
@@ -38,8 +38,9 @@ Returns `counts` compatible with `collect()`.
 
 ```
 ngless "1.0"
-local import "motus" version "2.5"
-import "parallel" version "1.0"
+local import "motus" version "2.6"
+import "parallel" version "0.6"
+import "mocat" version "0.0"
 
 samples = readlines("all_samples.txt")
 sample = lock1(samples)
