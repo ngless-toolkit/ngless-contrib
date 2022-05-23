@@ -1,5 +1,11 @@
 # Mapping to the GMGCv1 using NGLess
 
+If you use results using this resource, please cite
+
+> Coelho, L.P., Alves, R., del Río, Á.R. et al. Towards the biogeography of
+> prokaryotic genes. Nature 601, 252–256 (2022).
+> [https://doi.org/10.1038/s41586-021-04233-4](DOI: 10.1038/s41586-021-04233-4)
+
 We assume that you are familiar with basic NGLess usage for mapping/counting.
 Please see the main documentation and, in particular, the chapter on [how to
 use the IGC (integrated gene

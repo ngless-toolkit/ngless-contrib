@@ -37,14 +37,14 @@ Returns `counts` compatible with `collect()`.
 ## Example
 
 ```
-ngless "0.6"
+ngless "1.0"
 local import "motus" version "2.6"
 import "parallel" version "0.6"
 import "mocat" version "0.0"
 
 samples = readlines("all_samples.txt")
 sample = lock1(samples)
-files = load_mocat_sample(sample)
+files = load_fastq_directory(sample)
 
 files = preprocess(files, keep_singles=False) using |read|:
     read = substrim(read, min_quality=25)
