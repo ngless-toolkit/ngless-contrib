@@ -1,0 +1,38 @@
+version: 1.2.0
+name: macrel
+
+functions:
+    -
+        nglName: macrel_smorfs_to
+        arg0: ./run_smorfs.sh
+        arg1:
+            atype: str
+            can_gzip: true
+        additional:
+            -
+                name: ofile
+                required: true
+                atype: str
+        return:
+            rtype: void
+    -
+        nglName: "macrel_amps_to"
+        arg0: ./run_contigs.sh
+        arg1:
+            atype: str
+            can_gzip: true
+        additional:
+            -
+                name: output
+                required: true
+                atype: str
+        return:
+            rtype: void
+init:
+    init_cmd: ./check_install.sh
+
+citation: >
+    Santos-Júnior CD, Pan S, Zhao X, Coelho LP. 2020. Macrel: antimicrobial
+    peptide screening in genomes and metagenomes. PeerJ 8:e10555
+    https://doi.org/10.7717/peerj.10555
+
