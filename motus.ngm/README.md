@@ -2,18 +2,15 @@
 
 This external module integrates:
 
-mOTUs version 2.6
+mOTUs version 3.1
 
 ## Citation
 
-    Alessio Milanese, Daniel R Mende, Lucas Paoli, Guillem Salazar,
-    Hans-Joachim Ruscheweyh, Miguelangel Cuenca, Pascal Hingamp, Renato Alves,
-    Paul I Costea, Luis Pedro Coelho, Thomas S B Schmidt, Alexandre Almeida,
-    Alex L Mitchell, Robert D Finn, Jaime Huerta-Cepas, Peer Bork, Georg Zeller
-    & Shinichi Sunagawa. Microbial abundance, activity and population genomic
-    profiling with mOTUs2; Nature Communications 10, Article number: 1014
-    (2019). doi: 10.1038/s41467-019-08844-4
-
+    Hans-Joachim Ruscheweyh, Alessio Milanese, Lucas Paoli, Nicolai Karcher,
+    Quentin Clayssen, Marisa Isabell Metzger, Jakob Wirbel, Peer Bork,
+    Daniel R. Mende, Georg Zeller & Shinichi Sunagawa. Reference
+    genome-independent taxonomic profiling of microbiomes with mOTUs3;
+    Microbiome (2022). doi: 10.1186/s40168-022-01410-z
 
 # Usage
 
@@ -38,7 +35,7 @@ Returns `counts` compatible with `collect()`.
 
 ```
 ngless "1.0"
-local import "motus" version "2.6"
+local import "motus" version "3.1"
 import "parallel" version "0.6"
 import "mocat" version "0.0"
 
