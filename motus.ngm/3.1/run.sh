@@ -36,7 +36,7 @@ fi
 if [[ -z "$1" ]] ; then
     if [ ! -d "$NGLESS_MODULE_DIR/mOTUs" ]; then
         echo "mOTUs profiler not found. Please run the following command to install:"
-        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS2_DOWNLOAD && tar xf ${MOTUS2_VERSION}.tar.gz && rm -f ${MOTUS2_VERSION}.tar.gz && mv mOTUs-$MOTUS2_VERSION mOTUs && cd mOTUs && python setup.py && motus downloadDB"
+        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS2_DOWNLOAD && tar xf ${MOTUS2_VERSION}.tar.gz && rm -f ${MOTUS2_VERSION}.tar.gz && mv mOTUs-$MOTUS2_VERSION mOTUs && cd mOTUs && pip install . && motus downloadDB"
         exit 1
     fi
 else
