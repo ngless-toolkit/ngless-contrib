@@ -33,13 +33,21 @@ if ! python -c 'import sys; not (sys.version_info.major == 3 and sys.version_inf
     exit 1
 fi
 
+install_instructions () {
+    echo "cd $NGLESS_MODULE_DIR && python -m venv mOTUs-${MOTUS3_VERSION}-venv && source mOTUs-${MOTUS3_VERSION}-venv/bin/activate && wget $MOTUS3_DOWNLOAD && tar xf ${MOTUS3_VERSION}.tar.gz && rm -f ${MOTUS3_VERSION}.tar.gz && pip install ./mOTUs-${MOTUS3_VERSION} && motus downloadDB && rm -rf mOTUs-${MOTUS3_VERSION}"
+}
+
 if [[ -z "$1" ]] ; then
-    if [ ! -d "$NGLESS_MODULE_DIR/mOTUs-${MOTUS3_VERSION}-ngm" ]; then
+    if [ ! -d "${NGLESS_MODULE_DIR}/mOTUs-${MOTUS3_VERSION}-venv" ]; then
         echo "mOTUs profiler not found. Please run the following command to install:"
-        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS3_DOWNLOAD && tar xf ${MOTUS3_VERSION}.tar.gz && rm -f ${MOTUS3_VERSION}.tar.gz && mv mOTUs-${MOTUS3_VERSION} mOTUs-${MOTUS3_VERSION}-ngm && cd mOTUs-${MOTUS3_VERSION}-ngm && pip install . && motus downloadDB"
+        install_instructions
+        echo "If a fresh install is desired, delete all mOTUs folders at $NGLESS_MODULE_DIR and re-install using the above commands."
         exit 1
     fi
 else
+    # Activate motus virtual environment
+    source ${NGLESS_MODULE_DIR}/mOTUs-${MOTUS3_VERSION}-venv/bin/activate
+    
     # Parsing arguments passed
     ARG_PARSE="getopt -o s:Io:t:g:y:a -l sample:,speci_only,ofile:,taxonomic_level:,no_marker_genes:,length_alignment:,rel_abund -n $0 --"
 
