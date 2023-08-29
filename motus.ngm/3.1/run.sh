@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MOTUS2_VERSION="3.1.0"
-MOTUS2_DOWNLOAD="https://github.com/motu-tool/mOTUs/archive/${MOTUS2_VERSION}.tar.gz"
+MOTUS3_VERSION="3.1.0"
+MOTUS3_DOWNLOAD="https://github.com/motu-tool/mOTUs/archive/${MOTUS3_VERSION}.tar.gz"
 
 if ! command -v python >/dev/null ; then
     echo "python command not found"
@@ -34,9 +34,9 @@ if ! python -c 'import sys; not (sys.version_info.major == 3 and sys.version_inf
 fi
 
 if [[ -z "$1" ]] ; then
-    if [ ! -d "$NGLESS_MODULE_DIR/mOTUs" ]; then
+    if [ ! -d "$NGLESS_MODULE_DIR/mOTUs-${MOTUS3_VERSION}-ngm" ]; then
         echo "mOTUs profiler not found. Please run the following command to install:"
-        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS2_DOWNLOAD && tar xf ${MOTUS2_VERSION}.tar.gz && rm -f ${MOTUS2_VERSION}.tar.gz && mv mOTUs-$MOTUS2_VERSION mOTUs && cd mOTUs && pip install . && motus downloadDB"
+        echo "cd $NGLESS_MODULE_DIR && wget $MOTUS3_DOWNLOAD && tar xf ${MOTUS3_VERSION}.tar.gz && rm -f ${MOTUS3_VERSION}.tar.gz && mv mOTUs-${MOTUS3_VERSION} mOTUs-${MOTUS3_VERSION}-ngm && cd mOTUs-${MOTUS3_VERSION}-ngm && pip install . && motus downloadDB"
         exit 1
     fi
 else
@@ -143,7 +143,7 @@ else
 
     export PATH=$TMPBINDIR:$PATH
 
-    "$NGLESS_MODULE_DIR/mOTUs/motus" profile \
+    "$NGLESS_MODULE_DIR/mOTUs-${MOTUS3_VERSION}-ngm/motus" profile \
         $SPECI \
         $RELABUND \
         -t "$NGLESS_NR_CORES" \
