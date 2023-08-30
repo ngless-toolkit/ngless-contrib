@@ -151,7 +151,7 @@ else
 
     export PATH=$TMPBINDIR:$PATH
 
-    "$NGLESS_MODULE_DIR/mOTUs-${MOTUS3_VERSION}-ngm/motus" profile \
+    "$NGLESS_MODULE_DIR/mOTUs-${MOTUS3_VERSION}-venv/bin/motus" profile \
         $SPECI \
         $RELABUND \
         -t "$NGLESS_NR_CORES" \
